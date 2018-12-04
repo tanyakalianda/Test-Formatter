@@ -3,15 +3,15 @@ public class TrueFalse extends Question
 {
 	private String Answer;
 	
-	public TrueFalse(int n, String t, String a)
+	public TrueFalse(String t, String a)
 	{
-		super(n, t);
+		super(t);
 		Answer = a;
 	}
 	
 	public String toString()
 	{
-		return "Question " + getNumber() + ": " + getText() + " True or False";
+		return "Question " + getNumber() + ": " + " True or False" + getText();
 	}
 	
 	public String getSolution()

@@ -1,13 +1,15 @@
 
 public abstract class Question
 {
+	private static int nextNum = 1;      //static -> 1 variable that EVERY OBJECT shares       
 	private int number;
 	private String text;
 	
-	public Question(int n, String t)
+	public Question(String t)
 	{
-		number = n;
+		number = nextNum;           //or this.number = nextNum (this.number refers to the field)
 		text = t;
+		nextNum++;          //increments each question on its own -> first question =1 -> increments -> 2nd question = 2
 	}
 	
 	public int getNumber()
@@ -18,11 +20,6 @@ public abstract class Question
 	public String getText()
 	{
 		return text;
-	}
-	
-	public void nextQuestion()
-	{
-		number++;
 	}
 	
 	public abstract String getSolution();
